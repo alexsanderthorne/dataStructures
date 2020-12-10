@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - CombSort",
+            "request": "launch",
+            "mainClass": "CombSort",
+            "projectName": "dataStructures_867cdf8a"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Main",
             "request": "launch",
             "mainClass": "Main"

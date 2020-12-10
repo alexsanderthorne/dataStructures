@@ -27,12 +27,10 @@ class CombSort
             { 
                 if (arr[i] > arr[i+gap]) 
                 { 
-                    // Swap arr[i] and arr[i+gap] 
                     int temp = arr[i]; 
                     arr[i] = arr[i+gap]; 
                     arr[i+gap] = temp; 
   
-                    // Set swapped 
                     swapped = true; 
                 } 
             } 

@@ -1,0 +1,7 @@
+O algoritmo Comb sort (ou Combo sort ou ainda algoritmo do pente[1]) é um algoritmo de ordenação relativamente simples,
+e faz parte da família de algoritmos de ordenação por troca. Foi desenvolvido em 1980 por Wlodzimierz Dobosiewicz.
+Mais tarde, foi redescoberto e popularizado por Stephen Lacey e Richard Box em um artigo publicado na revista Byte em Abril de 1991.
+O Comb sort melhora o Bubble sort, e rivaliza com algoritmos como o Quicksort.
+A ideia básica é eliminar as tartarugas ou pequenos valores próximos do final da lista, já que em um bubble sort estes retardam a classificação tremendamente.
+O Algoritmo repetidamente reordena diferentes pares de itens, separados por um salto, que é calculado a cada passagem.
+Método semelhante ao Bubble Sort, porém mais eficiente.

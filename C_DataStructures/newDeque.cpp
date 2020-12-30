@@ -1,57 +1,82 @@
-#include <stdio.h>
-#include <stdlib.h>
 
-//Estrutura base do nó.
-struct node
+#include <bits/stdc++.h>
+using namespace std;
+
+struct QNode
 {
-    int nData;
-    struct node *pLink;
-};
- 
- 
-//Função pra printar o nó na tela.
-void displayLL(struct node *p)
-{
-    printf("Mostrando a lista:\n"); 
-    if(p)
+    int data;
+    QNode *next;
+    QNode(int d)
     {
-        do
-        {
-            printf(" %d", p->nData);
-            p=p->pLink;
-        }
-        while(p);
+        data = d;
+        next = NULL;
     }
-    else
-        printf("Lista vazia.");
-}
- 
- 
- 
-int main(void)
+};
+
+struct Queue
 {
-    struct node *pNode1 = NULL;
-    struct node *pNode2 = NULL;
-    struct node *pNode3 = NULL;
-     
-    //Criando os nos e associando os dados.
-    pNode1 = (struct node*) malloc(sizeof(struct node*));
-    pNode1->nData = 10;
-     
-    pNode2 = (struct node*) malloc(sizeof(struct node*));
-    pNode2->nData = 20;
-     
-    pNode3 = (struct node*) malloc(sizeof(struct node*));
-    pNode3->nData = 30;
-     
-    //Conectando os nós
-    pNode1->pLink = pNode2;
-    pNode2->pLink = pNode3;  
-    pNode3->pLink = NULL;
-     
-    //Mostrando a lista.
-    if(pNode1)  
-        displayLL(pNode1);
-  
-  return 0;
+    QNode *front, *rear;
+    Queue()
+    {
+        front = rear = NULL;
+    }
+
+    void enQueue(int x)
+    {
+
+        // Create a new LL node
+        QNode *temp = new QNode(x);
+
+        // If queue is empty, then
+        // new node is front and rear both
+        if (rear == NULL)
+        {
+            front = rear = temp;
+            return;
+        }
+
+        // Add the new node at
+        // the end of queue and change rear
+        rear->next = temp;
+        rear = temp;
+    }
+
+    // Function to remove
+    // a key from given queue q
+    void deQueue()
+    {
+        // If queue is empty, return NULL.
+        if (front == NULL)
+            return;
+
+        // Store previous front and
+        // move front one node ahead
+        QNode *temp = front;
+        front = front->next;
+
+        // If front becomes NULL, then
+        // change rear also as NULL
+        if (front == NULL)
+            rear = NULL;
+
+        delete (temp);
+    }
+};
+
+// Driven Program
+int main()
+{
+
+    Queue q;
+    q.enQueue(10);
+    q.enQueue(20);
+    q.deQueue();
+    q.deQueue();
+    q.enQueue(30);
+    q.enQueue(40);
+    q.enQueue(50);
+    q.deQueue();
+    cout << "Queue Front : " << (q.front)->data << endl;
+    cout << "Queue Rear : " << (q.rear)->data;
 }
+// This code is contributed by rathbhupendra

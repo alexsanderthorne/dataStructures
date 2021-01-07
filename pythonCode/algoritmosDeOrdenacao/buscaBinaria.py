@@ -105,9 +105,9 @@ class BinarySearchTree(BinaryTree):
             else:
                 # Substituto é o sucessor do valor a ser removido
                 substitute = self.min(node.right)
-                # Ao invés de trocar a posição dos nós, troca o valor
+                # Ao invés de trocar a posição dos nós, troca o valorr
                 node.data = substitute
-                # Depois, remove o substituto da subárvore à direita
+                # Depois, remove o substituto da subárvore à direita.
                 node.right = self.remove(substitute, node.right)
 
         return node
@@ -144,5 +144,3 @@ if __name__ == "__main__":
     print(tree2.root)
     print(tree2.root.right)
     print(tree2.root.left)
-
-    print(balanceada(self, node))

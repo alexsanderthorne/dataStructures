@@ -112,20 +112,6 @@ class BinarySearchTree(BinaryTree):
 
         return node
 
-    '''def identity(a, b):
-        # 1. As duas árvores são vazias.
-        if a is None and b is None:
-            return True
-
-        # 2. Nenhuma das árvores é vazia. Precisamos compará-las.
-        if a is not None and b is not None:
-            return ((a.chave == b.chave) and
-                    identity(a.esquerda, b.esquerda) and
-                    identity(a.direita, b.direita))
-
-        # 3. Uma árvore é vazia mas a outra não.
-        return False'''
-
     def balanceada(self, node):
         # Uma árvore binária vazia é balanceada.
 

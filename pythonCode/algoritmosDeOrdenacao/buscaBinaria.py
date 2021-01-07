@@ -112,14 +112,20 @@ class BinarySearchTree(BinaryTree):
 
         return node
 
-    # def search(self, value, node=ROOT):
-    #     if node == ROOT:
-    #         node = self.root
-    #     if node is None or node.data == value:
-    #         return BinarySearchTree(node)
-    #     if value < node.data:
-    #         return self.search(value, node.left)
-    #     return self.search(value, node.right)
+    def balanceada(self, node):
+        # Uma árvore binária vazia é balanceada.
+
+        altura = 0
+        if node is None:
+            return True
+
+        altura_esq = altura(node.left)
+        altura_dir = altura(node.right)
+        # Alturas diferem em mais de uma unidade.
+        if abs(altura_esq - altura_dir) > 1:
+            return False
+
+        return self.balanceada(node.left) and self.balanceada(node.right)
 
 
 if __name__ == "__main__":
@@ -127,6 +133,16 @@ if __name__ == "__main__":
     tree.root.left = Node(18)
     tree.root.right = Node(14)
 
+    tree2 = BinaryTree(9)
+    tree2.root.left = Node(33)
+    tree2.root.right = Node(23)
+
     print(tree.root)
     print(tree.root.right)
     print(tree.root.left)
+
+    print(tree2.root)
+    print(tree2.root.right)
+    print(tree2.root.left)
+
+    print(balanceada(self, node))

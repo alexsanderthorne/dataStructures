@@ -144,5 +144,3 @@ if __name__ == "__main__":
     print(tree2.root)
     print(tree2.root.right)
     print(tree2.root.left)
-
-    print(balanceada(self, node))
